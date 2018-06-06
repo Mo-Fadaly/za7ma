@@ -1,0 +1,831 @@
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+*/
+
+@import 'cc-ss-colors';
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Space+Mono');
+
+$primary-color: $olive;
+$secondary-color: $maroon;
+$primary-text-color: $black;
+$secondary-text-color: $white;
+$base-font: "Space Mono", monospace;
+$heading-font: "Inconsalata", monospace;
+$breakpoint-l: 768px;
+$breakpoint-m: 767px;
+
+/* Base Styles */
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Layout Styles */
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: 85%;
+    padding: 0;
+  }
+}
+
+.hero {
+  height: 20vh;
+}
+
+.hero--2x {
+  height: 40vh;
+}
+
+.hero--3x {
+  height: 60vh;
+}
+
+.hero--4x {
+  height: 80vh;
+}
+
+.hero--5x {
+  height: 100vh;
+}
+
+.hero__body {
+  padding: 2%;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.section {
+  padding: 2.5%;
+  margin: 1.5%;
+}
+
+.section__body {
+  padding: 2%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer,
+footer {
+  width: 100%;
+  height: 20vh;
+  background-color: $black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  h4 {
+    color: $secondary-text-color;
+    margin-top: 2%;
+  }
+}
+
+.footer__body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer__social {
+  list-style: none;
+  display: flex;
+  width: 18%;
+}
+
+.social__item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  a {
+    color: $secondary-text-color;
+
+    &:hover {
+      color: darken($white, 20%);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-m) {
+  h4 {
+    margin: 0;
+    margin-top: 20%;
+  }
+
+  .footer__social {
+    width: 60%;
+  }
+}
+
+.notif {
+  width: 30%;
+  margin-bottom: 1.25em;
+  color: $white;
+  height: 20vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+}
+
+/* Column Styles */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.grid.grid--gap-1 {
+  grid-gap: 1em;
+}
+
+.grid.grid--gap-2 {
+  grid-gap: 2em;
+}
+
+.grid.grid--gap-3 {
+  grid-gap: 3em;
+}
+
+@media (min-width: $breakpoint-l) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@media (max-width: $breakpoint-m) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid__item--1 {
+  grid-column-end: span 1;
+}
+
+.grid__item--2 {
+  grid-column-end: span 2;
+}
+
+.grid__item--3 {
+  grid-column-end: span 3;
+}
+
+.grid__item--4 {
+  grid-column-end: span 4;
+}
+
+.grid__item--5 {
+  grid-column-end: span 5;
+}
+
+.grid__item--6 {
+  grid-column-end: span 6;
+}
+
+.grid__item--7 {
+  grid-column-end: span 7;
+}
+
+.grid__item--8 {
+  grid-column-end: span 8;
+}
+
+.grid__item--9 {
+  grid-column-end: span 9;
+}
+
+.grid__item--10 {
+  grid-column-end: span 10;
+}
+
+.grid__item--11 {
+  grid-column-end: span 11;
+}
+
+.grid__item--12 {
+  grid-column-end: span 12;
+}
+
+/* Link Styles  */
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: lighten($primary-color, 45%);
+}
+
+/* Button Styles */
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 3em;
+  padding: 0 2em;
+  color: darken($gray, 25%);
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 3em;
+  letter-spacing: 0.05rem;
+  background-color: $white;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid $gray;
+  transition: all 0.2s;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.button[disabled],
+button[disabled],
+input[type="submit"][disabled],
+input[type="reset"][disabled],
+input[type="button"][disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button--primary,
+button.primary,
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary {
+  background-color: $primary-color;
+  color: $secondary-text-color;
+  border: 1px solid $primary-color;
+}
+
+.button--secondary,
+button.secondary,
+input[type="submit"].secondary,
+input[type="reset"].secondary,
+input[type="button"].secondary {
+  background-color: $secondary-color;
+  color: $secondary-text-color;
+  border: 1px solid $secondary-color;
+}
+
+.button--warning,
+button.warning,
+input[type="submit"].warning,
+input[type="reset"].warning,
+input[type="button"].warning {
+  background-color: $yellow;
+  color: $secondary-text-color;
+  border: 1px solid yellow;
+}
+
+.button--error,
+button.error,
+input[type="submit"].error,
+input[type="reset"].error,
+input[type="button"].error {
+  background-color: $red;
+  color: $secondary-text-color;
+  border: 1px solid $red;
+}
+
+.button--info,
+button.info,
+input[type="submit"].info,
+input[type="reset"].info,
+input[type="button"].info {
+  background-color: $blue;
+  color: $secondary-text-color;
+  border: 1px solid $blue;
+}
+
+.button--primary:hover,
+button:hover.primary,
+input[type="submit"]:hover.primary,
+input[type="reset"]:hover.primary,
+input[type="button"]:hover.primary,
+.button--primary:focus,
+button:focus.primary,
+input[type="submit"]:focus.primary,
+input[type="reset"]:focus.primary,
+input[type="button"]:focus.primary {
+  background-color: lighten($primary-color, 20%);
+  border-color: lighten($primary-color, 20%);
+  outline: 0;
+}
+
+.button--secondary:hover,
+button:hover.secondary,
+input[type="submit"]:hover.secondary,
+input[type="reset"]:hover.secondary,
+input[type="button"]:hover.secondary,
+.button--secondary:focus,
+button:focus.secondary,
+input[type="submit"]:focus.secondary,
+input[type="reset"]:focus.secondary,
+input[type="button"]:focus.secondary {
+  background-color: lighten($secondary-color, 20%);
+  border-color: lighten($secondary-color, 20%);
+  outline: 0;
+}
+
+.button--warning:hover,
+button:hover.warning,
+input[type="submit"]:hover.warning,
+input[type="reset"]:hover.warning,
+input[type="button"]:hover.warning,
+.button--warning:focus,
+button:focus.warning,
+input[type="submit"]:focus.warning,
+input[type="reset"]:focus.warning,
+input[type="button"]:focus.warning {
+  background-color: lighten($yellow, 20%);
+  border-color: lighten($yellow, 20%);
+  outline: 0;
+}
+
+.button--error:hover,
+button:hover.error,
+input[type="submit"]:hover.error,
+input[type="reset"]:hover.error,
+input[type="button"]:hover.error,
+.button--error:focus,
+button:focus.error,
+input[type="submit"]:focus.error,
+input[type="reset"]:focus.error,
+input[type="button"]:focus.error {
+  background-color: lighten($red, 20%);
+  border-color: lighten($red, 20%);
+  outline: 0;
+}
+
+.button--info:hover,
+button:hover.info,
+input[type="submit"]:hover.info,
+input[type="reset"]:hover.info,
+input[type="button"]:hover.info,
+.button--info:focus,
+button:focus.info,
+input[type="submit"]:focus.info,
+input[type="reset"]:focus.info,
+input[type="button"]:focus.info {
+  background-color: lighten($blue, 20%);
+  border-color: lighten($blue, 20%);
+  outline: 0;
+}
+
+/* Text Styles  */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: $base-font;
+  color: $primary-text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-family: $heading-font;
+  color: $primary-color;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: -0.1rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.1rem;
+}
+
+h3 {
+  font-size: 3rem;
+  line-height: 1.3;
+  letter-spacing: -0.1rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+  line-height: 1.35;
+  letter-spacing: -0.08rem;
+}
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -0.05rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+@media (min-width: 550px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 4.2rem;
+  }
+
+  h3 {
+    font-size: 3.6rem;
+  }
+
+  h4 {
+    font-size: 3rem;
+  }
+
+  h5 {
+    font-size: 2.4rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+  }
+}
+
+p {
+  margin-top: 0;
+  font-family: $base-font;
+}
+
+.text-r {
+  text-align: right;
+}
+
+.text-l {
+  text-align: left;
+}
+
+.text-c {
+  text-align: center;
+}
+
+/* Color Styles */
+
+.primary {
+  background-color: $primary-color;
+}
+
+.secondary {
+  background-color: $secondary-color;
+}
+
+.info {
+  background-color: $blue;
+}
+
+.warning {
+  background-color: $yellow;
+}
+
+.error {
+  background-color: $red;
+}
+
+.black {
+  background-color: $black;
+}
+
+.text-white {
+  color: $secondary-text-color;
+}
+
+.text-black {
+  color: $primary-text-color;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+.text-info {
+  color: $blue;
+}
+
+.text-warning {
+  color: $yellow;
+}
+
+.text-error {
+  color: $red;
+}
+
+/*  Helper Styles  */
+
+.full-width {
+  width: 100%;
+}
+
+.max-full-width {
+  max-width: 100%;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}
+
+.x-centered {
+  display: block;
+  margin: auto;
+}
+
+.no-margins {
+  margin: 0;
+}
+
+.float-l {
+  float: left;
+}
+
+.float-r {
+  float: right;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+/* Form Styles */
+
+.input,
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 3em;
+  padding: 0.75%;
+  background-color: $white;
+  border: 1px solid $gray;
+  border-radius: 2px;
+  box-shadow: 2px 1px 1px $gray;
+  box-sizing: border-box;
+}
+
+.input--secondary:focus,
+input[type="email"].input--secondary:focus,
+input[type="number"].input--secondary:focus,
+input[type="search"].input--secondary:focus,
+input[type="text"].input--secondary:focus,
+input[type="tel"].input--secondary:focus,
+input[type="url"].input--secondary,
+input[type="password"].input--secondary:focus {
+  border: 1px solid $secondary-color;
+}
+
+.input--info:focus,
+input[type="email"].input--info:focus,
+input[type="number"].input--info:focus,
+input[type="search"].input--info:focus,
+input[type="text"].input--info:focus,
+input[type="tel"].input--info:focus,
+input[type="url"].input--info:focus,
+input[type="password"].input--info:focus {
+  border: 1px solid $blue;
+}
+
+.input--warning:focus,
+input[type="email"].input--warning:focus,
+input[type="number"].input--warning:focus,
+input[type="search"].input--warning:focus,
+input[type="text"].input--warning:focus,
+input[type="tel"].input--warning:focus,
+input[type="url"].input--warning:focus,
+input[type="password"].input--warning:focus {
+  border: 1px solid $yellow;
+}
+
+.input--error:focus,
+input[type="email"].input--error:focus,
+input[type="number"].input--error:focus,
+input[type="search"].input--error:focus,
+input[type="text"].input--error:focus,
+input[type="tel"].input--error:focus,
+input[type="url"].input--error:focus,
+input[type="password"].input--error:focus {
+  border: 1px solid $red;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.input:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid $aqua;
+  outline: 0;
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+}
+
+label > .label-body {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  padding-left: 0;
+  margin-top: 0;
+  list-style: none;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+code {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: $silver;
+  border: 1px solid darken(silver, 5%);
+  border-radius: 4px;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid $primary-color;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+button,
+.button {
+  margin-bottom: 1rem;
+}
+
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem;
+}
+
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem;
+}
+
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid $silver;
+}

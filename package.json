@@ -1,0 +1,50 @@
+{
+  "name": "cc-ss",
+  "version": "1.0.0",
+  "description": "Boilerplate Development Framework",
+  "main": "./src/js/main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "NODE_ENV=production webpack --mode production",
+    "start": "webpack-dev-server --progress --colors --mode development",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l0rdcafe/cc-ss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/l0rdcafe/cc-ss/issues"
+  },
+  "homepage": "https://github.com/l0rdcafe/cc-ss#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.4.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "cssnano": "^3.10.0",
+    "extract-loader": "^2.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "gh-pages": "^1.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.2.0",
+    "node-sass": "^4.9.0",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.5",
+    "postcss-scss": "^1.0.5",
+    "postcss-simple-vars": "^4.1.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {}
+}
