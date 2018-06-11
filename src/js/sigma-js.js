@@ -2,12 +2,12 @@ const renderGraph = function(graph) {
   const { nodes, edges } = graph;
 
   const trafficDict = {
-    "mafeesh amal": "#ff4136",
-    za7ma: "#ff851b",
-    lazeez: "#39cccc",
-    mashy: "#ffdc00",
-    "7alawa": "#2ecc40",
-    unknown: "#aaa"
+    "mafeesh amal": "#ed2c2c",
+    za7ma: "#ff6f1c",
+    lazeez: "#ffdc00",
+    mashy: "#cefd4c",
+    "7alawa": "#19ac25",
+    unknown: "#000"
   };
 
   const sigmaNodes = nodes.map(node => ({
@@ -15,8 +15,8 @@ const renderGraph = function(graph) {
     label: node.label,
     x: Math.random(),
     y: Math.random(),
-    color: "#0074d9",
-    size: 0
+    color: "#000",
+    size: 1
   }));
 
   const sigmaEdges = edges.map(edge => ({
@@ -43,7 +43,7 @@ const renderGraph = function(graph) {
   s.startForceAtlas2();
   setTimeout(() => {
     s.killForceAtlas2();
-  }, 1000);
+  }, 430);
   s.refresh();
 };
 
