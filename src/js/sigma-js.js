@@ -6,7 +6,7 @@ const renderGraph = function(graph) {
     za7ma: "#ff6f1c",
     lazeez: "#ffdc00",
     mashy: "#cefd4c",
-    "7alawa": "#19ac25",
+    "7alawa": "#19e639",
     unknown: "#000"
   };
 
